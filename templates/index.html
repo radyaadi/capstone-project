@@ -17,7 +17,7 @@
     <head>
         <nav class="navbar navbar-dark bg-dark p-3">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1" style="font-size: 27px">GoFarm</span>
+                <span class="navbar-brand mb-0 h1 ms-3" style="font-size: 27px">GoFarm</span>
             </div>
         </nav>
     </head>
@@ -27,64 +27,74 @@
             <center>
                 <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
                     <div class="card-header">
-                        <h1>Crop Prediction</h1>
+                        <h3>Crop Prediction</h3>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">The Result Is</p>
                         {% if prediction_text %}
-                        <h5 class="card-title" style="color: bisque;">{{ prediction_text }}</h5>
+                        <h4 class="card-text">The Result Is</h4>
+                        <h3 class="card-text" style="color: bisque;">
+                            {{ prediction_text }}
+                        </h3>
                         {% endif %}
                     </div>
                 </div>
             </center>
         </section>
 
-        <section class="container-sm bg p-5" style="width: 45%; box-shadow: 0 3px 20px rgba(0, 0, 0, 0.253);">
+        <section class="container-sm bg p-5" style="width: 45%; margin-bottom: 5%; box-shadow: 0 3px 20px rgba(0, 0, 0, 0.253);">
             <form action="{{ url_for('predict')}}" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="nitrogen" class="form-label">Nitrogen</label>
-                        <input type="text" class="form-control" id="nitrogen" placeholder="input nitrogen rate" name="N">
+                        <input type="text" class="form-control" id="nitrogen" placeholder="input nitrogen rate" name="N" required>
                     </div>
                     <div class="col">
                         <label for="phosphorous" class="form-label">Phosphorous</label>
-                        <input type="text" class="form-control" id="phosphorous" placeholder="input phosphorous rate" name="P">
+                        <input type="text" class="form-control" id="phosphorous" placeholder="input phosphorous rate" name="P" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="potassium" class="form-label">Potassium</label>
-                        <input type="text" class="form-control" id="potassium" placeholder="input potassium rate" name="K">
+                        <input type="text" class="form-control" id="potassium" placeholder="input potassium rate" name="K" required>
                     </div>
                     <div class="col">
                         <label for="temperature" class="form-label">Temperature</label>
-                        <input type="text" class="form-control" id="temperature" placeholder="input temperature rate" name="temperature">
+                        <input type="text" class="form-control" id="temperature" placeholder="input temperature rate" name="temperature" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="humidity" class="form-label">Humidity</label>
-                        <input type="text" class="form-control" id="humidity" placeholder="input humidity rate" name="humidity">
+                        <input type="text" class="form-control" id="humidity" placeholder="input humidity rate" name="humidity" required>
                     </div>
                     <div class="col">
                         <label for="ph" class="form-label">pH</label>
-                        <input type="text" class="form-control" id="ph" placeholder="input ph rate" name="ph">
+                        <input type="text" class="form-control" id="ph" placeholder="input ph rate" name="ph" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-6" style="margin-left: 25%;">
                         <label for="rainfall" class="form-label" style="margin-left: 30%;">Rain Fall</label>
-                        <input type="text" class="form-control" id="rainfall" placeholder="input rainfall rate" name="rainfall">
+                        <input type="text" class="form-control" id="rainfall" placeholder="input rainfall rate" name="rainfall" required>
                     </div>
                 </div>
                 <div class="row mb-3 py-2">
-                    <button type="submit" class="btn btn-primary text" style="width: 44%; margin-left: 28%;">Submit</button>
+                    <button type="submit" class="btn btn-dark text" style="width: 44%; margin-left: 28%;">Predict</button>
                 </div>
             </form>
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <footer>
+        <nav class="navbar navbar-dark bg-dark p-3">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1 py-3" style="font-size: 14px">Copyright 2021 by Radya Adi & Murwanjani Tejo</span>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
 </body>
 
 </html>
