@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 import pickle
 
 # Create flask app
@@ -15,7 +15,13 @@ def predict():
     float_features = [float(x) for x in request.form.values()]
     features = [np.array(float_features)]
     prediction = model.predict(features)
-    return render_template("index.html", prediction_text = "{}".format(prediction))
+    return render_template("index.html", prediction_text = "{}".format(listToString(prediction)))
+
+def listToString(prediction): 
+    str = "" 
+    for label in prediction: 
+        str += label  
+    return str.title()
 
 if __name__ == "__main__":
     app.run(debug=True)
