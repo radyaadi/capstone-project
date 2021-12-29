@@ -17,7 +17,7 @@ Dataset tanaman berasal dari Kaggle yang dapat diakses pada link berikut: [Crop 
 1. Heroku
 
 # Deployment
-Website GoFarm dapat diakses melalui URL berikut: https://gofarm-app.herokuapp.com/
+Website GoFarm dapat diakses melalui URL berikut: https://app-gofarm.herokuapp.com/
 
 # Cara Kerja
 1. Masukkan nilai Nitrogen dalam satuan kg/ha, Phosphorous dalam satuan kg/ha, Potassium dalam satuan kg/ha, Temperature dalam satuan celcius, Humidity dalam satuan % (persen), pH dan Rainfall dalam mm.
